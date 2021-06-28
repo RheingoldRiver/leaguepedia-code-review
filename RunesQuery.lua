@@ -334,24 +334,13 @@ function h.makeOutput(data)
 	local tbl = output:tag('table')
 		:addClass('wikitable runedata hoverable-rows')
 	h.printHeaders(tbl)
-	h.printRows(tbl, data)
+	util_html.printRowsByList(tbl, data, COLUMNS)
 	return tostring(output)
 end
 
 function h.printHeaders(tbl)
-	local tr = util_html.printHeaderFromI18n(tbl, COLUMNS)
+	util_html.printHeaderFromI18n(tbl, COLUMNS)
 		:addClass('runedata-header')
-end
-
-function h.printRows(tbl, data)
-	for i, row in ipairs(data) do
-		local tr = tbl:tag('tr')
-			:addClass()
-		for _, k in ipairs(COLUMNS) do
-			tr:tag('td')
-				:wikitext(row[k])
-		end
-	end
 end
 
 return p
