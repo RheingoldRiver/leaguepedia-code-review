@@ -331,7 +331,7 @@ end
 -- Output
 function h.makeOutput(data)
   local output = mw.html.create()
-	local tbl = root:tag('table')
+	local tbl = output:tag('table')
 		:addClass('wikitable runedata hoverable-rows')
 	h.printHeaders(tbl)
 	h.printRows(tbl, data)
