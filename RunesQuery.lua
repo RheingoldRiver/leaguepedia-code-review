@@ -10,194 +10,194 @@ local TabVariables = require('Module:TabVariables')
 
 -- Runes Reforged data defined here only because Rune Trees are not stored in cargo yet.
 local RUNES_REFORGED = {
-  {
-    name = "Domination",
-    slots = {
-      {
-      	name = "Keystone",
-        runes = {
-          { name = "Electrocute" },
-          { name = "Predator" },
-          { name = "Dark Harvest" },
-          { name = "Hail of Blades" },
-        }
-      },
-      {
-      	name = "Malice",
-        runes = {
-          { name = "Cheap Shot" },
-          { name = "Taste of Blood" },
-          { name = "Sudden Impact" },
-        }
-      },
-      {
-      	name = "Tracking",
-        runes = {
-          { name = "Zombie Ward" },
-          { name = "Ghost Poro" },
-          { name = "Eyeball Collection" },
-        }
-      },
-      {
-      	name = "Hunter",
-        runes = {
-          { name = "Ravenous Hunter" },
-          { name = "Ingenious Hunter" },
-          { name = "Relentless Hunter" },
-          { name = "Ultimate Hunter" },
-        }
-      }
-    }
-  },
-  {
-    name = "Inspiration",
-    slots = {
-      {
-      	name = "Keystone",
-        runes = {
-          { name = "Glacial Augment" },
-          { name = "Unsealed Spellbook" },
-          { name = "Prototype: Omnistone" },
-        }
-      },
-      {
-      	name = "Contraption",
-        runes = {
-          { name = "Hextech Flashtraption" },
-          { name = "Magical Footwear" },
-          { name = "Perfect Timing" },
-        }
-      },
-      {
-      	name = "Tomorrow",
-        runes = {
-          { name = "Future's Market" },
-          { name = "Minion Dematerializer" },
-          { name = "Biscuit Delivery" },
-        }
-      },
-      {
-      	name = "Beyond",
-        runes = {
-          { name = "Cosmic Insight" },
-          { name = "Approach Velocity" },
-          { name = "Time Warp Tonic" },
-        }
-      }
-    }
-  },
-  {
-    name = "Precision",
-    slots = {
-      {
-      	name = "Keystone",
-        runes = {
-          { name = "Press the Attack" },
-          { name = "Lethal Tempo" },
-          { name = "Fleet Footwork" },
-          { name = "Conqueror" },
-        }
-      },
-      {
-      	name = "Heroism",
-        runes = {
-          { name = "Overheal" },
-          { name = "Triumph" },
-          { name = "Presence of Mind" },
-        }
-      },
-      {
-      	name = "Legend",
-        runes = {
-          { name = "Legend: Alacrity" },
-          { name = "Legend: Tenacity" },
-          { name = "Legend: Bloodline" },
-        }
-      },
-      {
-      	name = "Combat",
-        runes = {
-          { name = "Coup de Grace" },
-          { name = "Cut Down" },
-          { name = "Last Stand" },
-        }
-      }
-    }
-  },
-  {
-    name = "Resolve",
-    slots = {
-      {
-      	name = "Keystone",
-        runes = {
-          { name = "Grasp of the Undying" },
-          { name = "Aftershock" },
-          { name = "Guardian" },
-        }
-      },
-      {
-      	name = "Strength",
-        runes = {
-          { name = "Demolish" },
-          { name = "Font of Life" },
-          { name = "Shield Bash" },
-        }
-      },
-      {
-      	name = "Resistance",
-        runes = {
-          { name = "Conditioning" },
-          { name = "Second Wind" },
-          { name = "Bone Plating" },
-        }
-      },
-      {
-      	name = "Vitality",
-        runes = {
-          { name = "Overgrowth" },
-          { name = "Revitalize" },
-          { name = "Unflinching" },
-        }
-      }
-    }
-  },
-  {
-    name = "Sorcery",
-    slots = {
-      {
-      	name = "Keystone",
-        runes = {
-          { name = "Summon Aery" },
-          { name = "Arcane Comet" },
-          { name = "Phase Rush" },
-        }
-      },
-      {
-      	name = "Artefact",
-        runes = {
-          { name = "Nullifying Orb" },
-          { name = "Manaflow Band" },
-          { name = "Nimbus Cloak" },
-        }
-      },
-      {
-      	name = "Excellence",
-        runes = {
-          { name = "Transcendence" },
-          { name = "Celerity" },
-          { name = "Absolute Focus" },
-        }
-      },
-      {
-      	name = "Power",
-        runes = {
-          { name = "Scorch" },
-          { name = "Waterwalking" },
-          { name = "Gathering Storm" },
-        }
-      }
-    }
-  }
+	{
+		name = "Domination",
+		slots = {
+			{
+				name = "Keystone",
+				runes = {
+					{ name = "Electrocute" },
+					{ name = "Predator" },
+					{ name = "Dark Harvest" },
+					{ name = "Hail of Blades" },
+				}
+			},
+			{
+				name = "Malice",
+				runes = {
+					{ name = "Cheap Shot" },
+					{ name = "Taste of Blood" },
+					{ name = "Sudden Impact" },
+				}
+			},
+			{
+				name = "Tracking",
+				runes = {
+					{ name = "Zombie Ward" },
+					{ name = "Ghost Poro" },
+					{ name = "Eyeball Collection" },
+				}
+			},
+			{
+				name = "Hunter",
+				runes = {
+					{ name = "Ravenous Hunter" },
+					{ name = "Ingenious Hunter" },
+					{ name = "Relentless Hunter" },
+					{ name = "Ultimate Hunter" },
+				}
+			}
+		}
+	},
+	{
+		name = "Inspiration",
+		slots = {
+			{
+				name = "Keystone",
+				runes = {
+					{ name = "Glacial Augment" },
+					{ name = "Unsealed Spellbook" },
+					{ name = "Prototype: Omnistone" },
+				}
+			},
+			{
+				name = "Contraption",
+				runes = {
+					{ name = "Hextech Flashtraption" },
+					{ name = "Magical Footwear" },
+					{ name = "Perfect Timing" },
+				}
+			},
+			{
+				name = "Tomorrow",
+				runes = {
+					{ name = "Future's Market" },
+					{ name = "Minion Dematerializer" },
+					{ name = "Biscuit Delivery" },
+				}
+			},
+			{
+				name = "Beyond",
+				runes = {
+					{ name = "Cosmic Insight" },
+					{ name = "Approach Velocity" },
+					{ name = "Time Warp Tonic" },
+				}
+			}
+		}
+	},
+	{
+		name = "Precision",
+		slots = {
+			{
+				name = "Keystone",
+				runes = {
+					{ name = "Press the Attack" },
+					{ name = "Lethal Tempo" },
+					{ name = "Fleet Footwork" },
+					{ name = "Conqueror" },
+				}
+			},
+			{
+				name = "Heroism",
+				runes = {
+					{ name = "Overheal" },
+					{ name = "Triumph" },
+					{ name = "Presence of Mind" },
+				}
+			},
+			{
+				name = "Legend",
+				runes = {
+					{ name = "Legend: Alacrity" },
+					{ name = "Legend: Tenacity" },
+					{ name = "Legend: Bloodline" },
+				}
+			},
+			{
+				name = "Combat",
+				runes = {
+					{ name = "Coup de Grace" },
+					{ name = "Cut Down" },
+					{ name = "Last Stand" },
+				}
+			}
+		}
+	},
+	{
+		name = "Resolve",
+		slots = {
+			{
+				name = "Keystone",
+				runes = {
+					{ name = "Grasp of the Undying" },
+					{ name = "Aftershock" },
+					{ name = "Guardian" },
+				}
+			},
+			{
+				name = "Strength",
+				runes = {
+					{ name = "Demolish" },
+					{ name = "Font of Life" },
+					{ name = "Shield Bash" },
+				}
+			},
+			{
+				name = "Resistance",
+				runes = {
+					{ name = "Conditioning" },
+					{ name = "Second Wind" },
+					{ name = "Bone Plating" },
+				}
+			},
+			{
+				name = "Vitality",
+				runes = {
+					{ name = "Overgrowth" },
+					{ name = "Revitalize" },
+					{ name = "Unflinching" },
+				}
+			}
+		}
+	},
+	{
+		name = "Sorcery",
+		slots = {
+			{
+				name = "Keystone",
+				runes = {
+					{ name = "Summon Aery" },
+					{ name = "Arcane Comet" },
+					{ name = "Phase Rush" },
+				}
+			},
+			{
+				name = "Artefact",
+				runes = {
+					{ name = "Nullifying Orb" },
+					{ name = "Manaflow Band" },
+					{ name = "Nimbus Cloak" },
+				}
+			},
+			{
+				name = "Excellence",
+				runes = {
+					{ name = "Transcendence" },
+					{ name = "Celerity" },
+					{ name = "Absolute Focus" },
+				}
+			},
+			{
+				name = "Power",
+				runes = {
+					{ name = "Scorch" },
+					{ name = "Waterwalking" },
+					{ name = "Gathering Storm" },
+				}
+			}
+		}
+	}
 }
 
 local INTRO_COLUMNS = {
@@ -242,7 +242,7 @@ function p._main(args)
 	local query = h.getQuery(args)
 	local data = util_cargo.queryAndCast(query)
 	util_map.rowsInPlace(data, h.processRow)
-  return h.makeOutput(data)
+	return h.makeOutput(data)
 end
 
 function h.getQuery(args)
@@ -255,7 +255,7 @@ function h.getQuery(args)
 			'ScoreboardTeams=ST',
 			'ScoreboardPlayers=SP',
 			'Teams',
-    },
+		},
 		join = {
 			'SG.MatchId = MS.MatchId',
 			'SG.UniqueGame = ST.UniqueGame',
@@ -330,12 +330,12 @@ end
 
 -- Output
 function h.makeOutput(data)
-  local output = mw.html.create()
+	local output = mw.html.create()
 	local tbl = output:tag('table')
 		:addClass('wikitable runedata hoverable-rows')
 	h.printHeaders(tbl)
 	h.printRows(tbl, data)
-  return tostring(output)
+	return tostring(output)
 end
 
 function h.printHeaders(tbl)
