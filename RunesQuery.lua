@@ -240,6 +240,7 @@ function p.main(frame)
 end
 
 function p._main(args)
+	i18n.init('RunesQuery')
 	local query = h.getQuery(args)
 	local data = util_cargo.queryAndCast(query)
 	util_map.rowsInPlace(data, h.processRow)
