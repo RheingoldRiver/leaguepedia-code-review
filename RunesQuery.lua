@@ -277,7 +277,7 @@ function h.getQuery(args)
 		where = {
 			('SG.OverviewPage = "%s"'):format(overviewPage),
 			('SG.MatchHistory IS NOT NULL'),
-			('SG.N_Page = %d'):format(tabNumber),
+			('MS.N_Page = %d'):format(tabNumber),
 		},
 		orderBy = 'MS.N_Page, MS.N_MatchInPage, SG.N_GameInMatch',
 	}
