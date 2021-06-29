@@ -2,6 +2,7 @@ local util_args = require('Module:ArgsUtil')
 local util_cargo = require('Module:CargoUtil')
 local util_esports = require('Module:EsportsUtil')
 local util_html = require('Module:HtmlUtil')
+local util_map = require('Module:MapUtil')
 local util_table = require('Module:TableUtil')
 local util_text = require('Module:TextUtil')
 local util_vars = require('Module:VarsUtil')
@@ -278,12 +279,14 @@ function h.getQuery(args)
 			('SG.N_Page = %d'):format(tabNumber),
 		},
 		orderBy = 'MS.N_Page, MS.N_MatchInPage, SG.N_GameInMatch',
-	}	
+	}
+	return ret
 end
 
 function h.processRow(row)
 	row.classes = {'rune-line-'..row.Position} -- required for toggle
 	row.MatchHistory = util_text.extLink(row.MatchHistory:gsub("^http://", "https://")) -- ensure HTTPS
+	row.Runes = util_text.splitIfString(row.Runes)
 	h.parseRuneTrees(row)
 end
 
@@ -291,7 +294,7 @@ function h.parseRuneTrees(row)
 	local trees = h.getRuneTreeNamesFromRuneNames(row.Runes)
 	util_table.merge(row, trees)
 	for i, k in ipairs(RUNES_COLUMNS) do
-		row[k] = runes[i]
+		row[k] = row.Runes[i]
 	end
 end
 
