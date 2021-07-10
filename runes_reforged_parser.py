@@ -59,8 +59,7 @@ class RunesReforgedParser:
                         return rune_path.get('name', '')
 
     def get_primary(self, runes):
-        runes = guarantee_list(runes)
-        
+        runes = guarantee_list(runes) or []
         trees = [x for x in map(self.get_tree_name, runes) if x]
         if not trees:
             return
@@ -74,9 +73,13 @@ def sample():
 
     rune_names = "Grasp of the Undying,Demolish,Bone Plating,Overgrowth,Taste of Blood,Ravenous Hunter,AttackSpeed,Armor,Armor"
     primary = rune_parser.get_primary(rune_names)
-
     print("Runes:", guarantee_list(rune_names))
-    print("Primary is:", primary)
+    print("Primary:", primary)
+
+    rune_names = ""
+    primary = rune_parser.get_primary(rune_names)
+    print("Runes:", guarantee_list(rune_names))
+    print("Primary:", primary)
 
 if __name__ == '__main__':
     sample()
