@@ -12,7 +12,7 @@ def guarantee_list(s):
         return re.findall(r"[^,]+", s)
 
 class RunesReforgedParser:
-    url = 'http://ddragon.leagueoflegends.com/cdn/10.16.1/data/en_US/runesReforged.json'
+    RUNES_REFORGED_URL = 'http://ddragon.leagueoflegends.com/cdn/10.16.1/data/en_US/runesReforged.json'
 
     def __init__(self, filename='runesReforged.min.json'):
         self.filename = filename
@@ -20,7 +20,7 @@ class RunesReforgedParser:
         self.data = self._map_rune_to_tree(rune_paths)
 
     def _fetch(self):
-        resp = requests.get(self.url)
+        resp = requests.get(self.RUNES_REFORGED_URL)
         return resp.json()
 
     def _simplify(self, data):

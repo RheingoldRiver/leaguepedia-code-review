@@ -13,17 +13,20 @@ rune_parser = RunesReforgedParser()
 
 class TemplateModifier(TemplateModifierBase):
     def update_template(self, template: Template):
-        for param in template.params:
-            param: Parameter
-            if param.name.matches('runes'):
-                w = param.value
-                for tl in w.filter_templates():
-                    tl: Template
-                    runes = tl.params[0]
-                    primary = rune_parser.get_primary(runes)
-                    if primary:
-                        template.add('primary', primary,
-                                     before='secondary')
+        if template.has('primary'):
+            return
+        if not template.has('runes'):
+            return
+        param = template.get('runes')
+        param: Parameter
+        w = param.value
+        for tl in w.filter_templates():
+            tl: Template
+            rune_names = tl.get('1').value.strip()
+            primary = rune_parser.get_primary(rune_names)
+            if primary is not None:
+                template.add('primary', primary,
+                             before='secondary')
         return
 
 def add_primary_rune_tree():
