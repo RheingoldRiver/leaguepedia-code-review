@@ -16,7 +16,8 @@ class RunesReforgedParser:
 
     def __init__(self, filename='runesReforged.min.json'):
         self.filename = filename
-        self.data = self._load()
+        rune_paths = self._load()
+        self.data = self._map_rune_to_tree(rune_paths)
 
     def _fetch(self):
         resp = requests.get(self.url)
@@ -51,18 +52,25 @@ class RunesReforgedParser:
             self._dump(simplified)
             return simplified
 
-    def get_tree_name(self, rune_name):
-        for rune_path in self.data:
-            for slot in rune_path.get('slots', []):
-                for rune in slot.get('runes', []):
-                    if rune.get('name', '') == rune_name:
-                        return rune_path.get('name', '')
+    def _map_rune_to_tree(self, rune_paths: list):
+        return {
+            rune['name']: rune_path['name']
+            for rune_path in rune_paths
+            for slot in rune_path['slots']
+            for rune in slot['runes']
+        }
+
+    def get_tree_name(self, rune_name: str):
+        rune_name = rune_name.strip()
+        return self.data.get(rune_name)
 
     def get_primary(self, runes):
-        runes = guarantee_list(runes) or []
+        runes = guarantee_list(runes)
+        if not runes:
+            return None
         trees = [x for x in map(self.get_tree_name, runes) if x]
         if not trees:
-            return
+            return None
         tally = Counter(trees)
         primary = tally.most_common()[0][0]
         return primary
