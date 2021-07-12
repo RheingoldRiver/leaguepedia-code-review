@@ -11,7 +11,7 @@ local TabVariables = require('Module:TabVariables')
 
 local INTRO_COLUMNS = {
 	'Patch', 'Player', 'Team', 'Champion', 'Position',
-	'Primary', 'Secondary',
+	'PrimaryTree', 'SecondaryTree',
 }
 local RUNES_COLUMNS = {
 	'Keystone', 'Rune1', 'Rune2', 'Rune3', 'Rune4', 'Rune5',
