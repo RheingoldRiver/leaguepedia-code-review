@@ -66,8 +66,8 @@ function h.getQuery(args)
 			'COALESCE(Teams.Short,Teams.Name,ST.Team) = Team',
 			'SP.Champion',
 			'SP.IngameRole = Position',
-			'SP.PrimaryTree = Primary',
-			'SP.SecondaryTree = Secondary',
+			'SP.PrimaryTree',
+			'SP.SecondaryTree',
 			'SP.Runes', -- keystone, 5 runes, 3 stats
 			'SG.MatchHistory',
 		},
