@@ -43,8 +43,21 @@ function p._main(args)
 	return h.makeOutput(data)
 end
 
+function h.getTabNumber(args)
+	local pageNumber = tonumber(args.page)
+	if pageNumber then
+		return pageNumber
+	end
+	-- If the name of the final tab is Runes, that means that we're not in a
+	-- position where the tab index actually corresponds to a data tab index
+	if TabVariables.getName() == 'Runes' then
+		return 1
+	end
+	return TabVariables.getIndex() or 1
+end
+
 function h.getQuery(args)
-	local tabNumber = args.page or TabVariables.getIndex() or 1
+	local tabNumber = h.getTabNumber(args)
 	local overviewPage = util_esports.getOverviewPage(args.overviewPage)
 	local ret = {
 		tables = {
