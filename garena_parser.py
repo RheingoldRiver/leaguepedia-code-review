@@ -109,7 +109,8 @@ participantids_dict = {
     9: "red5"
 }
 
-rune_keys = ["primary_1", "primary_2", "primary_3", "primary_4", "secondary_1", "secondary_2"]
+rune_keys = ["primary_1", "primary_2", "primary_3", "primary_4", "secondary_1", "secondary_2", "offense", "flex",
+             "defense"]
 
 player_templates = ["", ""]
 teamgold = {"team1": 0, "team2": 0}
