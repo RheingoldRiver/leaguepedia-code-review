@@ -8,7 +8,7 @@ function p.stripDab(str)
 end
 
 function p.stripPipe(str)
-    local ret = str:gsub('%|.*',''):gsub('%]%]','')
+    local ret = str:gsub('%|.*','')
     return ret
 end
 
